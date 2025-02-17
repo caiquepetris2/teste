@@ -1,0 +1,109 @@
+/* Resetando margens e paddings de todos os elementos */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+
+
+.rodape-direitos{
+    color: black;
+    transform: translateY(24px);
+}
+
+.rodape {
+    background-color: #f8f8f8;
+    color: #555555;
+    width: 100%;
+    font-size: 14px;
+    font-family: helvetica;
+    margin: 0;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    
+}
+
+/* Ajuste para as divisões no rodapé */
+.rodape-div {
+    display: flex;
+    flex-wrap: wrap;  /* Flex com quebra de linha, mas horizontalmente */
+    justify-content: space-between; /* Garantir que os itens fiquem distribuídos */
+    width: 100%;
+    margin: 0;
+    align-items: stretch;
+    padding: 30px 10px;
+}
+.rodape a {  
+    text-decoration: none;
+    color: #555555;
+}
+
+.rodape p {
+    margin-bottom: 5px;
+}
+
+.rodape span {
+    font-size: 20px;
+    color: black;
+}
+.rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4 {
+    display: flex;
+    width: calc(25% - 20px); /* 4 colunas em telas grandes */
+    padding: 10px;
+    justify-content: center; /* Centraliza o conteúdo nas divisões */
+}
+.logo12 img {
+    transform: translateY(-60px);
+}
+
+.texto {
+    transform: translateY(-40px);
+}
+
+/* Ajustes para telas médias e grandes */
+@media (min-width: 992px) {
+    .rodape-div {
+        padding: 30px 10px;
+    }
+
+    .rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4 {
+        width: calc(25% - 20px); /* Cada divisão terá 25% de largura */
+    }
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4 {
+        width: 50%; /* 2 colunas em telas médias */
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4 {
+        width: 100%; /* 1 coluna em telas muito pequenas */
+        padding: 10px;
+    }
+
+    .rodape-direitos {
+        padding: 10px 0;
+        transform: translateY(0);
+    }
+
+    .logo12 img {
+        width: auto;
+        text-align: center;
+    }
+}
+
+footer {
+    border-top: 2px solid #f7f7f9; /* Altere a cor e a espessura conforme necessário */
+    padding-top: 20px;
+    margin-top: 20px; /* Adiciona um pouco de espaço acima da linha */
+}

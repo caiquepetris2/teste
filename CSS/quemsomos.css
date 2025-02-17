@@ -1,0 +1,88 @@
+/* Hero Section */
+.hero-section {
+    height: 400px;
+    background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #5e5e5e, #5c657d);
+    opacity: 0.8;
+   
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 1;
+}
+
+/* Cards */
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Animações */
+.card, .hero-content {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.compromisso {
+    width: 100%;
+    background-color: #f8f9fa; /* Cor do background */
+    padding: 1.5rem 0; /* Ajuste o padding para evitar altura extra */
+    margin: 0; /* Remove margens que podem estar causando o excesso */
+    display: flex;
+    align-items: center; /* Garante alinhamento correto */
+    justify-content: center;
+}
+
+.compromisso .container {
+    max-width: 1200px;
+    padding: 0 15px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.compromisso h3,
+.compromisso p {
+    margin: 0; /* Garante que o texto não adicione espaço extra */
+    padding: 0;
+}

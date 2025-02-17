@@ -1,0 +1,421 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contatobody, html {
+  height: 100%;
+  flex-direction: column;
+}
+
+/* Header */
+/* ----------<JAVASCRIPT>-------------------- */
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px ; 
+  
+}
+
+#header.rolar {
+  background-color: rgb(255, 255, 255) !important;
+  padding: px 0;
+  transition: 0.5s;
+  width: 100vw; /* 100% da largura da tela */
+  height: 100px; 
+}
+
+#header.rolar .menu-desktop nav ul li a {
+  color: black !important;
+}
+#header.rolar .botao-contato button {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0) !important;
+  border: 1px solid rgb(0, 0, 0) !important;
+}
+
+#header.rolar .botao-contato button:hover {
+  background-color: rgb(0, 0, 0) !important;
+  color: white !important;
+  border: 1px solid rgb(255, 255, 255) !important;
+}
+/* ------</JAVASCRIPT>-----------------------*/
+.menu-desktop li a {
+  display: inline-block; /* Permite que o link cresça sem restrições */
+  padding: 10px 20px; /* Dá mais espaço para o link */
+  transition: transform 0.3s ease, color 0.3s ease; /* Transição suave */
+ 
+}
+
+.menu-desktop li a:hover {
+  transform: scale(1.1); /* Aumenta o tamanho do link */
+  text-decoration: underline; /* Sublinha o texto */
+  color: rgb(0, 0, 0); /* Cor branca no hover */
+}
+
+/* Espaçamento no main para afastar header e footer */
+main {
+  padding-top: 300px; /* Afasta do header */
+  padding-bottom: 80px; /* Afasta do footer */
+}
+
+/* Footer */
+footer {
+  position: relative;
+
+  padding: 20px 0;
+  text-align: center;
+  width: 100%; /* Garante que o footer ocupe toda a largura da tela */
+}
+
+/* Container principal */
+.content-container {
+  display: flex;
+  gap: 40px; /* Espaçamento entre as colunas */
+  padding: 20px; /* Reduzi o padding superior e inferior para o espaçamento ser controlado pelo main */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* Formulário */
+.form-container {
+  flex: 1; /* Ocupa 50% da largura */
+  background: #f8f8f8;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333;
+}
+
+.form-container p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.input-single {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.input-single .input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  
+}
+form .input-single label{
+  position: absolute;
+  left:4px;
+  bottom:5px ;
+  cursor:text;
+  transition: all 0.5s;
+  color: #808080;
+}
+ /*  */
+ 
+form .input-single .input:focus ~ label,
+form .input-single .input:valid ~ label{
+  transform: translateY(-40px);
+  font-size: 20px;
+  color: #2D5966;
+  margin: 10px;
+
+
+  
+}
+ /* /// */
+.input-single .input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+.btn input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin: 50px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Linha (container da direita) */
+.linha {
+  flex: 1; /* Ocupa 50% da largura */
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Espaçamento entre information e map-section */
+}
+
+/* Information */
+.information {
+  background: #f8f8f8;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+/* Mapa */
+.map-section {
+  background: #f8f8f8;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centraliza o texto "Onde ficamos?" */
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.map-section h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.map-wrapper {
+  width: 100%;
+  height: 300px; /* Altura do mapa */
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .content-container {
+    flex-direction: column; /* Coluna única em dispositivos móveis */
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .form-container,
+  .information,
+  .map-section {
+    padding: 20px;
+  }
+
+  .map-wrapper {
+    height: 250px; /* Reduzir altura do mapa em dispositivos móveis */
+  }
+}
+a {
+  color: inherit; /* Herda a cor do elemento pai */
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+/* Estilos base (mobile) */
+.content-container {
+  flex-direction: column;
+  padding: 10px;
+}
+
+/* Tablets */
+@media screen and (min-width: 768px) {
+  .content-container {
+      flex-direction: row;
+      padding: 20px;
+  }
+}
+
+/* Desktops */
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .content-container {
+      padding: 20px;
+      gap: 30px;
+  }
+}
+
+
+  .form-container,
+  .information,
+  .map-section {
+      padding: 20px;
+      
+  }
+
+  .map-wrapper {
+      height: 300px;
+  }
+
+  #header {
+      padding: 10px;
+  }
+
+
+@media screen and (max-width: 480px) {
+  main {
+      padding-top: 200px;
+  }
+
+  .form-container h1 {
+      font-size: 24px;
+  }
+}
+
+/* Hamburger Menu Styles */
+.menu-mobile {
+  display: none; /* Hidden by default on desktop */
+}
+
+.hamburger-menu {
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Mobile Menu Overlay */
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -300px; /* Começa fora da tela */
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  transition: 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.mobile-menu-overlay.active {
+  display: block;
+  right: 0; /* Desliza para dentro da tela */
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 120px; /* Aumentado o espaço superior */
+  gap: 20px; /* Espaço entre os links */
+}
+
+.mobile-menu-content a {
+  color: #333;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 15px 25px;
+  border-bottom: 1px solid #eee;
+  transition: 0.3s;
+}
+.mobile-menu-content a:hover {
+  background-color: #f5f5f5;
+  padding-left: 30px;
+}
+
+.close-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Overlay para detectar clique fora */
+.overlay-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998; /* Menor que o menu */
+}
+
+.overlay-background.active {
+  display: block;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .menu-desktop {
+      display: none;
+  }
+
+  .menu-mobile {
+      display: block;
+  }
+}
+/* Botão Contato */
+.botao-contato {
+  display: block; /* Visível por padrão no desktop */
+}
+
+/* Menu Mobile e Overlay */
+.menu-mobile {
+  display: none;
+}
+
+.hamburger-menu {
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* X para fechar */
+.close-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Media Query para Mobile */
+@media screen and (max-width: 768px) {
+  .menu-desktop,
+  .botao-contato {
+      display: none; /* Esconde menu desktop e botão contato */
+  }
+
+  .menu-mobile {
+      display: block;
+  }
+}
